@@ -23,10 +23,11 @@ contract VipaAuction {
     uint256 public constant MINIMUM_BID = 100000000000000; // 0.0001 тбнб
 
     // время, на которое открыт аукцион (в секундах)
-    uint256 public constant AUCTION_TIME = 300 seconds; // 5 минут
+    uint256 public constant AUCTION_TIME = 300; // 5 минут
 
     // время начала аукциона
-    uint256 public auctionStart;
+    //uint256 public auctionStart;
+    uint256 public auctionStart = block.timestamp + 10; 
 
     // модификаторы для проверки состояния аукциона
     modifier onlyBeforeAuctionStart() {
